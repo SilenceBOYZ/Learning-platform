@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-family-freeman {
+    font-family: "Freeman", sans-serif, serif;
+  }
+  .linkItem.active {
+    color: rgba(109 40 217);
+    border-bottom-color: rgba(109 40 217);
+    border-bottom-width: 4px;
+  }
+  .collapse-plus > .collapse-title:after {
+    left: 15px !important;
+    top: 15px !important;
+    right: none;
+  }
+
+  .linkVideo > .active {
+    border-bottom-color: rgb(22 163 74);
+  }
+}
