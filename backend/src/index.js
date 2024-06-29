@@ -4,20 +4,44 @@ const app = express();
 const morgan = require("morgan");
 const helmet = require("helmet");
 const compression = require("compression")
+const bodyParser = require("body-parser");
+const cors = require("cors")
 const route = require("./routes");
 const PORT = 5000;
+const session = require("express-session");
+const { v4: uuidv4 } = require("uuid")
+const database = require("./config/database/config")
+require("dotenv").config();
 
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(compression());
+app.use(cors({
+  origin: "localhost:3000",
+  credentials: true,
+}))
+app.set('trust proxy', 1)
 
+app.use(session({
+  genid: () => {
+    return uuidv4();
+  },
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { expires: 24 * 3600 * 1000 }, // cookie secure true will not send cookie to the server on http, only allow in https
+}));
 
-
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: false,
+}))
 
 // const videoFileMap = {
 //   'videoPractice1': 'videos/videoHuongdan1.mp4',
 //   'videoPractice2': 'videos/videoHuongdan2.mp4',
 //   'videoPractice3': 'videos/videoHuongdan3.mp4',
+// }
 // }
 
 // app.get('/videos/:filename', (req, res) => {
@@ -54,6 +78,7 @@ app.use(compression());
 //   }
 // });
 
+database.connectToDB();
 route(app);
 
 app.listen(PORT, () => {
