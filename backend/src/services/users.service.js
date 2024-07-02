@@ -1,17 +1,11 @@
 const { db } = require("../config/database/config");
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
-const salt = bcrypt.genSaltSync(saltRounds);
-
-const hashPassword = (userpassword) => {
-  return bcrypt.hashSync(userpassword, salt);
-}
+const hashPassword = require("../utils/hashPassword");
 
 function checkUserPassword(passwordRef, userPassword) {
   const match = bcrypt.compareSync(passwordRef, userPassword);
   return match;
 }
-
 // bcrypt.compareSync(myPlaintextPassword, hash); function to compare password in sync
 
 const createUser = (data, imageUrl) => {
@@ -69,10 +63,44 @@ const checkUserExist = (email, password) => {
   })
 }
 
+const getUserByEmail = (email) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let code = {};
+      let [user] = await db.query('SELECT * FROM USERS WHERE `email` = ? ', [email]);
+      if (!user.length) {
+        code.errCode = 1;
+        code.errMessage = "Người dùng không tồn tại trong hệ thống";
+        code.data = { id };
+      } else {
+        code.errCode = 0;
+        code.errMessage = "Người dùng tồn tại trong hệ thống";
+        code.data = user[0];
+      }
+      resolve(code);
+    } catch (error) {
+      reject(error);
+    }
+  })
+}
 
-
+let updateUserPassword = (password, userId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let [result] = await db.query('UPDATE users SET password=? WHERE id = ?', [password, userId]);
+      if(result.affectedRows === 1) {
+        resolve("Update user password success")
+      }
+      resolve("Error in update user password")
+    } catch (error) {
+      reject(error)
+    }
+  });
+}
 
 module.exports = {
   createUser,
-  checkUserExist
+  checkUserExist,
+  getUserByEmail,
+  updateUserPassword
 }

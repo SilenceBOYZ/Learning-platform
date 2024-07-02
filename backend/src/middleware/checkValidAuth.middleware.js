@@ -14,7 +14,8 @@ let checkValidAuth = async (req, res, next) => {
       next();
     }
   } catch (error) {
-    res.status(404).json(error.message);
+    // Catch jsonwebtoken invalid verification
+    return res.status(404).json(error.errMessage);
   }
 }
 

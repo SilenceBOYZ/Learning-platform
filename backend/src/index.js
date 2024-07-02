@@ -17,7 +17,6 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(compression());
 app.use(cors({
-  origin: "localhost:3000",
   credentials: true,
 }))
 app.set('trust proxy', 1)

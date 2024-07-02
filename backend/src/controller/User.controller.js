@@ -18,8 +18,7 @@ let authenticated = async (req, res) => {
 }
 
 let logout = async (req, res) => {
-  req.session.userinfor = null;
-  // res.clearCookie('connect.sid', { path: '/' })
+  req.session.destroy();
   res.status(200).json("User have been logout");
 }
 
