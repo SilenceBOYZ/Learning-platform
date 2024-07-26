@@ -19,7 +19,15 @@ export default {
       'mobile': { 'max': '660px' }
     },
     extend: {
-
+      keyframes: {
+        floatDown: {
+          '0%': { transform: 'translateY(-5rem)' },
+          '100%': { transform: 'translateY(0)' },
+        }
+      },
+      animation: {
+        'floatDown': 'floatDown .3s linear forwards',
+      }
     },
   },
   daisyui: {

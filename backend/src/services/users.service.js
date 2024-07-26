@@ -71,7 +71,26 @@ const getUserByEmail = (email) => {
       if (!user.length) {
         code.errCode = 1;
         code.errMessage = "Người dùng không tồn tại trong hệ thống";
-        code.data = { id };
+      } else {
+        code.errCode = 0;
+        code.errMessage = "Người dùng tồn tại trong hệ thống";
+        code.data = user[0];
+      }
+      resolve(code);
+    } catch (error) {
+      reject(error);
+    }
+  })
+}
+
+const getUserById = (userId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let code = {};
+      let [user] = await db.query('SELECT * FROM USERS WHERE `id` = ? ', [userId]);
+      if (!user.length) {
+        code.errCode = 1;
+        code.errMessage = "Người dùng không tồn tại trong hệ thống";
       } else {
         code.errCode = 0;
         code.errMessage = "Người dùng tồn tại trong hệ thống";
@@ -88,7 +107,7 @@ let updateUserPassword = (password, userId) => {
   return new Promise(async (resolve, reject) => {
     try {
       let [result] = await db.query('UPDATE users SET password=? WHERE id = ?', [password, userId]);
-      if(result.affectedRows === 1) {
+      if (result.affectedRows === 1) {
         resolve("Update user password success")
       }
       resolve("Error in update user password")
@@ -98,9 +117,43 @@ let updateUserPassword = (password, userId) => {
   });
 }
 
+let updateUserInformation = (userId, username, image_url) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let queryString = `UPDATE users SET username = ?, image_url = ? WHERE id = ?`
+      let [result] = await db.query(queryString, [username, image_url, userId]);
+      if (result.affectedRows === 1) {
+        resolve("Cập nhật thông tin người dùng thành công")
+      }
+      resolve("Cập nhật thông tin người dùng không thành công");
+    } catch (error) {
+      reject(error);
+    }
+  })
+}
+
+let changeUserPassword = (userId, newPassword) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let password = hashPassword(newPassword);
+      let queryString = `UPDATE users SET password = ? WHERE id = ?`
+      let [result] = await db.query(queryString, [password, userId]);
+      if (result.affectedRows === 1) {
+        resolve("Cập nhật mật khẩu người dùng thành công")
+      }
+      resolve("Cập nhật mật khẩu người dùng không thành công");
+    } catch (error) {
+      reject(error);
+    }
+  })
+}
+
 module.exports = {
   createUser,
   checkUserExist,
   getUserByEmail,
-  updateUserPassword
+  updateUserPassword,
+  getUserById,
+  updateUserInformation,
+  changeUserPassword
 }

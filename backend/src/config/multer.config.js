@@ -29,6 +29,15 @@ const courseDiskStorage = multer.diskStorage({
   }
 })
 
+const videoDiskStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/videos/uploads/video-lecture');
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`)
+  }
+})
+
 const uploadDisk = multer({
   storage: diskStorage,
 })
@@ -45,11 +54,16 @@ const uploadCourseThumbnail = multer({
   storage: courseDiskStorage,
 })
 
+const uploadVideoLecture = multer({
+  storage: videoDiskStorage,
+})
+
 module.exports = {
   uploadDisk,
   uploadMemory,
   uploadUserImage,
-  uploadCourseThumbnail
+  uploadCourseThumbnail,
+  uploadVideoLecture
 }
 
 

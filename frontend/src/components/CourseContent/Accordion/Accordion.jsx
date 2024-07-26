@@ -6,9 +6,7 @@ import { useParams } from "react-router-dom";
 function Accordion() {
   const { id } = useParams();
   const { content } = useSelector(getCourseById(id));
-
-  console.log(content);
-
+  
   return (
     <div className="mt-10 space-y-4">
       {content.map((section, index) => (

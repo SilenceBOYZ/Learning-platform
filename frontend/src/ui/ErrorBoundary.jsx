@@ -4,7 +4,7 @@ function ErrorBoundary() {
   const error =  useRouteError();
   console.error(error);
   return (
-    <div>
+    <div className="min-h-[100dvh]">
       Error
     </div>
   )

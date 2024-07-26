@@ -49,19 +49,98 @@ const data = {
           "section_title": "Basic Concepts",
           "lectures": [
             {
-              "lecture_id": "3",
+              "lecture_id": "1",
               "title": "Variables and Data Types",
               "duration": "20 minutes",
               "video_url": "blob:https://www.youtube.com/fc30450a-77c4-40db-a0dd-54eb84a0c393",
               "resources": []
             },
             {
-              "lecture_id": "4",
+              "lecture_id": "2",
               "title": "Control Structures",
               "duration": "25 minutes",
               "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
               "resources": []
+            },
+            {
+              "lecture_id": "3",
+              "title": "Loop, while",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            },
+            {
+              "lecture_id": "4",
+              "title": "Regex expression",
+              "duration": "15 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            },
+            {
+              "lecture_id": "5",
+              "title": "Call back in JavaScripts",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            },
+            {
+              "lecture_id": "6",
+              "title": "Higher order function",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
             }
+            , {
+              "lecture_id": "7",
+              "title": "Build in function with array",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            }
+            , {
+              "lecture_id": "8",
+              "title": "Asynchronous and Synchronous",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            }
+            , {
+              "lecture_id": "9",
+              "title": "ES6 in JavaScripts",
+              "duration": "15 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            }
+            , {
+              "lecture_id": "10",
+              "title": "Promise in JavaScript",
+              "duration": "7 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            }
+            ,
+            {
+              "lecture_id": "11",
+              "title": "Async and await",
+              "duration": "4 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            },
+            {
+              "lecture_id": "12",
+              "title": "Practice with javascript",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            },
+            {
+              "lecture_id": "13",
+              "title": "DOM",
+              "duration": "25 minutes",
+              "video_url": "blob:https://www.youtube.com/fb857069-0217-46ad-8a2c-6b932c1fcad9",
+              "resources": []
+            }
+
           ]
         }
       ],
@@ -182,6 +261,226 @@ const data = {
     },
     {
       "course_id": "105",
+      "title": "Machine Learning with Python",
+      "description": "Learn machine learning concepts and techniques using Python.",
+      "instructor": {
+        "name": "Eva Brown",
+        "bio": "Eva Brown is a machine learning engineer with extensive experience in Python.",
+        "profile_image_url": "https://example.com/instructor/eva_brown.jpg"
+      },
+      "price": 69.99,
+      "currency": "USD",
+      "language": "English",
+      "level": "Intermediate",
+      "duration": "15 hours",
+      "rating": 4.8,
+      "reviews_count": 400,
+      "thumbnail_url": "https://i.ytimg.com/vi/7eh4d6sabA0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN1JWolqLLX-BgZBhYx9w-hGPj_Q.jpg",
+      "category": "Machine Learning",
+      "tags": ["machine learning", "python", "data science"],
+      "content": [
+        {
+          "section_title": "Introduction to Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "1",
+              "title": "What is Machine Learning?",
+              "duration": "20 minutes",
+              "video_url": "https://example.com/video/intro_ml",
+              "resources": []
+            }
+          ]
+        },
+        {
+          "section_title": "Python for Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "2",
+              "title": "Python Basics for ML",
+              "duration": "30 minutes",
+              "video_url": "https://example.com/video/python_basics_ml",
+              "resources": [
+                {
+                  "type": "pdf",
+                  "url": "https://example.com/resources/python_ml_guide.pdf",
+                  "title": "Python Basics for Machine Learning Guide"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enrollment_count": 2500,
+      "published_date": "2022-05-20",
+      "last_updated": "2023-04-05"
+    },
+    {
+      "course_id": "106",
+      "title": "Machine Learning with Python",
+      "description": "Learn machine learning concepts and techniques using Python.",
+      "instructor": {
+        "name": "Eva Brown",
+        "bio": "Eva Brown is a machine learning engineer with extensive experience in Python.",
+        "profile_image_url": "https://example.com/instructor/eva_brown.jpg"
+      },
+      "price": 69.99,
+      "currency": "USD",
+      "language": "English",
+      "level": "Intermediate",
+      "duration": "15 hours",
+      "rating": 4.8,
+      "reviews_count": 400,
+      "thumbnail_url": "https://i.ytimg.com/vi/7eh4d6sabA0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN1JWolqLLX-BgZBhYx9w-hGPj_Q.jpg",
+      "category": "Machine Learning",
+      "tags": ["machine learning", "python", "data science"],
+      "content": [
+        {
+          "section_title": "Introduction to Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "1",
+              "title": "What is Machine Learning?",
+              "duration": "20 minutes",
+              "video_url": "https://example.com/video/intro_ml",
+              "resources": []
+            }
+          ]
+        },
+        {
+          "section_title": "Python for Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "2",
+              "title": "Python Basics for ML",
+              "duration": "30 minutes",
+              "video_url": "https://example.com/video/python_basics_ml",
+              "resources": [
+                {
+                  "type": "pdf",
+                  "url": "https://example.com/resources/python_ml_guide.pdf",
+                  "title": "Python Basics for Machine Learning Guide"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enrollment_count": 2500,
+      "published_date": "2022-05-20",
+      "last_updated": "2023-04-05"
+    },
+    {
+      "course_id": "107",
+      "title": "Machine Learning with Python",
+      "description": "Learn machine learning concepts and techniques using Python.",
+      "instructor": {
+        "name": "Eva Brown",
+        "bio": "Eva Brown is a machine learning engineer with extensive experience in Python.",
+        "profile_image_url": "https://example.com/instructor/eva_brown.jpg"
+      },
+      "price": 69.99,
+      "currency": "USD",
+      "language": "English",
+      "level": "Intermediate",
+      "duration": "15 hours",
+      "rating": 4.8,
+      "reviews_count": 400,
+      "thumbnail_url": "https://i.ytimg.com/vi/7eh4d6sabA0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN1JWolqLLX-BgZBhYx9w-hGPj_Q.jpg",
+      "category": "Machine Learning",
+      "tags": ["machine learning", "python", "data science"],
+      "content": [
+        {
+          "section_title": "Introduction to Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "1",
+              "title": "What is Machine Learning?",
+              "duration": "20 minutes",
+              "video_url": "https://example.com/video/intro_ml",
+              "resources": []
+            }
+          ]
+        },
+        {
+          "section_title": "Python for Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "2",
+              "title": "Python Basics for ML",
+              "duration": "30 minutes",
+              "video_url": "https://example.com/video/python_basics_ml",
+              "resources": [
+                {
+                  "type": "pdf",
+                  "url": "https://example.com/resources/python_ml_guide.pdf",
+                  "title": "Python Basics for Machine Learning Guide"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enrollment_count": 2500,
+      "published_date": "2022-05-20",
+      "last_updated": "2023-04-05"
+    },
+    {
+      "course_id": "108",
+      "title": "Machine Learning with Python",
+      "description": "Learn machine learning concepts and techniques using Python.",
+      "instructor": {
+        "name": "Eva Brown",
+        "bio": "Eva Brown is a machine learning engineer with extensive experience in Python.",
+        "profile_image_url": "https://example.com/instructor/eva_brown.jpg"
+      },
+      "price": 69.99,
+      "currency": "USD",
+      "language": "English",
+      "level": "Intermediate",
+      "duration": "15 hours",
+      "rating": 4.8,
+      "reviews_count": 400,
+      "thumbnail_url": "https://i.ytimg.com/vi/7eh4d6sabA0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN1JWolqLLX-BgZBhYx9w-hGPj_Q.jpg",
+      "category": "Machine Learning",
+      "tags": ["machine learning", "python", "data science"],
+      "content": [
+        {
+          "section_title": "Introduction to Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "1",
+              "title": "What is Machine Learning?",
+              "duration": "20 minutes",
+              "video_url": "https://example.com/video/intro_ml",
+              "resources": []
+            }
+          ]
+        },
+        {
+          "section_title": "Python for Machine Learning",
+          "lectures": [
+            {
+              "lecture_id": "2",
+              "title": "Python Basics for ML",
+              "duration": "30 minutes",
+              "video_url": "https://example.com/video/python_basics_ml",
+              "resources": [
+                {
+                  "type": "pdf",
+                  "url": "https://example.com/resources/python_ml_guide.pdf",
+                  "title": "Python Basics for Machine Learning Guide"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enrollment_count": 2500,
+      "published_date": "2022-05-20",
+      "last_updated": "2023-04-05"
+    },
+    {
+      "course_id": "109",
       "title": "Machine Learning with Python",
       "description": "Learn machine learning concepts and techniques using Python.",
       "instructor": {

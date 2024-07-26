@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const compression = require("compression")
 const bodyParser = require("body-parser");
+const path = require("path");
 const cors = require("cors")
 const route = require("./routes");
 const PORT = 5000;
@@ -20,7 +21,7 @@ app.use(cors({
   credentials: true,
 }))
 app.set('trust proxy', 1)
-
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(session({
   genid: () => {
     return uuidv4();
@@ -32,9 +33,7 @@ app.use(session({
 }));
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-  extended: false,
-}))
+app.use(bodyParser.urlencoded({extended: true}))
 
 // const videoFileMap = {
 //   'videoPractice1': 'videos/videoHuongdan1.mp4',

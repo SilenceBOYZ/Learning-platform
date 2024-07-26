@@ -1,27 +1,18 @@
-import { useState } from "react";
-import VideoPlayer from "../features/videoPlayer/VideoPlayer";
+import CourseLists from "../features/courses/CourseLists";
+import Banner from "../ui/banner/Banner";
+import CatergoryNavBar from "../ui/layout/CatergoryNavBar";
 
 function HomePage() {
-  const [videoId, setVideoId] = useState(null);
-
-  function playVideo(e, videoId) {
-    e.preventDefault();
-    setVideoId(videoId);
-  }
-
   return (
-    <div>
-      {videoId && <VideoPlayer videoId={videoId} />}
-      <button onClick={(e) => playVideo(e, "videoPractice1")}>
-        Play video 1
-      </button>
-      <button onClick={(e) => playVideo(e, "videoPractice2")}>
-        Play video 2
-      </button>
-      <button onClick={(e) => playVideo(e, "videoPractice3")}>
-        Play video 3
-      </button>
-    </div>
+    <section className="max-w-[90rem] mx-auto px-4 py-6 pb-12 space-y-6">
+      <CatergoryNavBar />
+      <Banner />
+      <div className="space-y-2">
+        <CourseLists title="Khóa học nổi bật" linkUrl="courses/" />        
+        <CourseLists title="Khóa học giảm giá" linkUrl="courses/" />        
+        <CourseLists title="Khóa học theo từng lĩnh vực" linkUrl="courses/" />        
+      </div>
+    </section>
   );
 }
 

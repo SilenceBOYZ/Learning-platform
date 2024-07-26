@@ -1,11 +1,12 @@
-import SectionMain from "../../ui/SectionMain";
-import SectionLink from "../../ui/SectionLink";
-import LinkCourseDetail from "../../ui/LinkCourseDetail";
+import SectionMain from "../../ui/layout/SectionMain";
+import SectionLink from "../../ui/layout/SectionLink";
+import LinkCourseDetail from "../../ui/navCourse/LinkCourseDetail";
 import Banner from "../../components/CourseContent/CourseBanner/Banner";
 import Card from "../../components/CourseContent/CourseCard/Card";
 import { Outlet, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getCourseById } from "../../store/slices/courseSlice";
+import List from "../../ui/navCourse/List";
 
 function CourseDetail() {
   const { id } = useParams();
@@ -26,11 +27,11 @@ function CourseDetail() {
         <Banner />
         <Card />
         <section className="px-10 py-4 max-w-[70%]">
-          <ul className="flex border-b-[1px] box-border pt-2">
+          <List>
             <LinkCourseDetail to="description">Mô tả khóa học</LinkCourseDetail>
             <LinkCourseDetail to="content">Nội dung Khóa học</LinkCourseDetail>
             <LinkCourseDetail to="lecture">Giảng viên</LinkCourseDetail>
-          </ul>
+          </List>
           <Outlet />
         </section>
       </div>

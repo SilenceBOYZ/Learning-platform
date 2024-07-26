@@ -15,7 +15,7 @@ function AccordionItem({
   // const { lecture_id, title, duration, video_url, resources } = lecture;
   return (
     <li className="cursor-pointer last:rounded-br-sm last:rounded-bl-md">
-      <NavLink className="text-neutral-500 py-3 border-[1px] border-t-[0px] border-slate-200 px-4 w-full font-medium flex items-center gap-2 justify-between pr-12 hover:text-purple-700">
+      <NavLink className="text-neutral-700 py-3 border-[1px] border-t-[0px] border-slate-200 px-4 w-full font-medium flex items-center gap-2 justify-between pr-12 hover:text-purple-700">
         <span className="flex items-center gap-2">
           <FaPlay className="text-purple-900" /> <span>{title}</span>
         </span>

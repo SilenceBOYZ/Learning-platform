@@ -1,10 +1,9 @@
-const { checkLectureAccess } = require("../services/lecture.service");
-const { verifyToken } = require("../utils/jwtToken");
+const { checkLectureAccess } = require("../services/lecturer.service");
+const getUserIdFromToken = require("../utils/getuserIdFromToken");
 
 
 let checkLecturePermission = async (req, res, next) => {
-  let token = await req.session.userInfor;
-  let { userId } = verifyToken(token);
+  let userId = await getUserIdFromToken(req);
   let result = await checkLectureAccess(userId);
   if (result.errCode === 0) {
     next();

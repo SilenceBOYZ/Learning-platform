@@ -20,7 +20,6 @@ let forgotPassword = async (req, res, next) => {
     await insertResetToken(email, resetToken, createdAt, expiredAt, 0);
     await sendPasswordResetEmail(email, resetToken, origin);
     res.json({ message: 'Please check your email for a new password' });
-
   } catch (error) {
     console.log(error);
   }

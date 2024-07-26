@@ -23,5 +23,45 @@ let organizeCourse = (data, userId, thumbnail_url) => {
   })
 }
 
+let getCourseById = (courseId, lecturerId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let response = {};
+      let [course] = await db.query(`SELECT * FROM courses WHERE courses.id = ${courseId} AND lecturerId = ${lecturerId} `);
+      if (!course.length) {
+        response.errCode = 1;
+        response.errMessage = "Không tìm thấy khóa học"
+      } else {
+        response.errCode = 0;
+        response.errMessage = "Tìm kiếm thành công";
+        response.data = course[0];
+      }
+      resolve(response);
+    } catch (error) {
+      reject(error);
+    }
+  })
+}
 
-module.exports = { organizeCourse };  
+let updateCourse = (courseId, title, shortDesc, price, image, catergoryId) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let respone = {};
+      let queryString = `UPDATE courses SET title = ?, shortDesc = ?, price = ?, thumbnail_url = ?, catergoryId = ? WHERE id = ?`
+      let [result] = await db.query(queryString, [title, shortDesc, price, image, catergoryId, courseId])
+      if(!result.affectedRows) {
+        respone.errCode = 1;
+        respone.errMessage = "Khoá học chưa được cập nhật thành công"
+      } else {
+        respone.errCode = 0;
+        respone.errMessage = "Khoá học đã cập nhật thành công"
+      }
+      resolve(respone);
+    } catch (error) {
+      reject(error);
+    }
+  })
+}
+
+
+module.exports = { organizeCourse, getCourseById, updateCourse };  
