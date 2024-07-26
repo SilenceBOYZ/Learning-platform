@@ -25,33 +25,27 @@ function CourseEditor() {
     .reduce((pre, cur) => pre.length + cur.length);
 
   return (
-    <div className="card rounded-md w-80 bg-base-100 shadow-xl absolute right-20 top-28 z-20">
-      <figure className="p-4">
+    <div className="flex gap-4">
+      <figure className="">
         <img src={thumbnail_url} alt="Shoes" />
       </figure>
-      <div className="card-body px-4 pb-4 pt-0 gap-0 space-y-0">
-        <h2 className="card-title text-neutral-500 text-lg font-bold">
-          Học phí
-        </h2>
-        <p className="font-bold text-2xl mt-0 mb-[10px_!important] text-green-600">
-          {price} đ
-        </p>
-        <ul className="font-semibold space-y-1 mb-[20px_!important] text-neutral-500">
-          <li className="flex items-center gap-2">
-            <HiOutlineCheck /> Khóa học bao gồm:
-          </li>
-          <li className="flex items-center gap-2">
-            <HiOutlineCheck /> Số lượng: {totalVideo} video
-          </li>
-          <li className="flex items-center gap-2">
-            <HiOutlineCheck /> Tổng thời gian: {duration.split(" ")[0]} giờ
-          </li>
-          <li className="flex items-center gap-2">
-            <HiOutlineCheck /> Tài liệu lý thuyết: 4
-          </li>
-        </ul>
-        <div className="card-actions justify-center">
-          <Button>Buy now</Button>
+      <div className="flex flex-col">
+        <div className="space-y-3">
+          <h1 className="text-3xl font-medium">{title}</h1>
+          <p className="">{description}</p>
+          <ul className="font-semibold space-y-1 text-neutral-500 list-disc">
+            <li className="flex items-center gap-2  ">
+              Số lượng: {totalVideo} video
+            </li>
+            <li className="flex items-center gap-2">
+              Tổng thời gian: {duration.split(" ")[0]} giờ
+            </li>
+            <li className="flex items-center gap-2">Tài liệu lý thuyết: 4</li>
+            <li className="flex items-center gap-2">Đánh giá: 4.5</li>
+          </ul>
+        </div>
+        <div className="mt-auto">
+          <Button custom="rounded-sm">Cập nhật</Button>
         </div>
       </div>
     </div>
